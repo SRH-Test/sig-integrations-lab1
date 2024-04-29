@@ -26,7 +26,7 @@ jobs:
         polaris_assessment_types: 'SAST,SCA'
         polaris_application_name: 'SH-Demo'
         polaris_project_name: 'CILab'
-        polaris_branch_name: 'main'
+        polaris_branch_name: ${{ github.head_ref || github.ref_name }}
         polaris_prComment_enabled: ${{ github.event_name == 'pull_request' && 'true' || 'false' }}
         polaris_reports_sarif_create: 'true'
         polaris_upload_sarif_report: 'true'
