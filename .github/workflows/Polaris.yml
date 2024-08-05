@@ -19,7 +19,7 @@ jobs:
         distribution: microsoft
         cache: maven
     - name: Polaris Scan
-      uses: synopsys-sig/synopsys-action@v1.8.0
+      uses: synopsys-sig/synopsys-action@v1.9.0
       with:
         polaris_server_url: ${{ vars.POLARIS_SERVERURL }}
         polaris_access_token: ${{ secrets.POLARIS_ACCESSTOKEN }}
@@ -31,3 +31,5 @@ jobs:
         polaris_reports_sarif_create: 'true'
         polaris_upload_sarif_report: 'true'
         github_token: ${{ secrets.GITHUB_TOKEN }}
+        polaris_assessment_mode: 'SOURCE_UPLOAD'
+ 
